@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  get 'bookmarks/new'
-  get 'lists/index'
-  get 'lists/show'
-  get 'lists/new'
+  # get 'bookmarks/new'
+  # get 'lists/index'
+  # get 'lists/show'
+  # get 'lists/new'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   root to: "lists#index"
@@ -11,11 +11,10 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   resources :lists, only: [:index, :show, :new, :create, :destroy] do
-    resources :bookmarks, only: [:new, :create, :destroy]
+    resources :bookmarks, only: [:new, :create]
   end
 
   resources :bookmarks, only: [:destroy]
-
 
   # Defines the root path route ("/")
   # root "posts#index"
