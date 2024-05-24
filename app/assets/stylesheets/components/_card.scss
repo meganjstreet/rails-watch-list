@@ -1,0 +1,54 @@
+.card-list {
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.card-remove-link {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  opacity: 0.8;
+
+
+  &:hover {
+    color: white;
+    text-decoration: none;
+    opacity: 1;
+  }
+}
+
+a {
+  color: white;
+  opacity: 0.8;
+
+  &:hover {
+    opacity: 1;
+  }
+
+}
+
+.card {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+
+
+  .card-title {
+    font-weight: bold;
+    margin-top: none;
+  }
+}

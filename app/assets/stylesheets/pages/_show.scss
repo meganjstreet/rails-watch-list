@@ -1,0 +1,26 @@
+@import "home";
+
+.banner {
+  color: $light-gray;
+  height: 30vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-button-container {
+  display: flex;
+  justify-content: end;
+}
+
+.card-footer {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: none;
+  a {
+    color: $red;
+  }
+}
