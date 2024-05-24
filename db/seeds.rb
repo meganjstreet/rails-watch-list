@@ -12,6 +12,7 @@ require "open-uri"
 
 Bookmark.destroy_all
 Movie.destroy_all
+List.destroy_all
 
 url = "https://tmdb.lewagon.com/movie/top_rated"
 movies_serialized = URI.open(url).read
