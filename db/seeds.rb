@@ -18,6 +18,15 @@ url = "https://tmdb.lewagon.com/movie/top_rated"
 movies_serialized = URI.open(url).read
 movies = JSON.parse(movies_serialized)
 
+url2 = "https://tmdb.lewagon.com/movie/popular"
+movies2_serialized = URI.open(url2).read
+movies2 = JSON.parse(movies2_serialized)
+
+
 movies["results"].each do |movie|
-  Movie.create!(title: movie["original_title"], overview: movie["overview"], poster_url: "https://image.tmdb.org/t/p/w500#{movie["backdrop_path"]}")
+  Movie.create!(title: movie["title"], overview: movie["overview"] == "" ? "This movie has no overview" : movie["overview"], poster_url: "https://image.tmdb.org/t/p/w500#{movie["backdrop_path"]}")
+end
+
+movies2["results"].each do |movie|
+  Movie.create!(title: movie["title"],  overview: movie["overview"] == "" ? "This movie has no overview" : movie["overview"], poster_url: "https://image.tmdb.org/t/p/w500#{movie["backdrop_path"]}")
 end
