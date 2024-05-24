@@ -11,7 +11,7 @@
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   position: relative;
-}
+  }
 
 .card-remove-link {
   color: white;
@@ -35,7 +35,7 @@
 
 a {
   color: white;
-  opacity: 0.8;
+  opacity: 0.9;
 
   &:hover {
     opacity: 1;
@@ -44,11 +44,33 @@ a {
 }
 
 .card {
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border: none;
 
 
   .card-title {
     font-weight: bold;
     margin-top: none;
+  }
+
+  .card-body {
+    background-color: white;
+  }
+
+  .card-footer span {
+    color: $primary;
+    font-size: larger;
+  }
+
+  .card-footer {
+    padding: 15px 20px;
+
+  }
+
+  .card-footer a {
+    opacity: 0.6;
+    &:hover {
+      opacity: 1;
+    }
   }
 }

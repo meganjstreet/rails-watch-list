@@ -4,23 +4,30 @@
 
 <div class="container justify-content-center p-3">
   <div class="row mb-3">
-    <% @bookmarks.each do |bookmark| %>
-    <div class="col-lg-4 col-md-6 col-12 d-flex align-items-stretch">
-      <div class="card mb-3">
-      <%= image_tag bookmark.movie.poster_url, alt: "movie poster", class: "card-img-top" %>
-      <div class="card-body">
-        <h5 class="card-title"><%= bookmark.movie.title %></h5>
-        <p class="card-content"><%= bookmark.movie.overview %></p>
+      <% if @bookmarks.length > 0 %>
+      <% @bookmarks.each do |bookmark| %>
+      <div class="col-lg-4 col-md-6 col-12 d-flex align-items-stretch">
+        <div class="card mb-3">
+        <%= image_tag bookmark.movie.poster_url, alt: "movie poster", class: "card-img-top" %>
+        <div class="card-body">
+          <h5 class="card-title"><%= bookmark.movie.title %></h5>
+          <p class="card-content"><%= bookmark.movie.overview %></p>
+        </div>
+        <div class="card-footer">
+        <span>
+        <i class="fa-solid fa-quote-left"></i> <%= bookmark.comment %>
+        </span>
+        <%= link_to bookmark_path(bookmark), data: {turbo_method: "delete", turbo_confirm: "Are you sure?"} do %>
+          <i class="fa-regular fa-trash-can"></i>
+        <% end %>
+        </div>
+        </div>
       </div>
-      <div class="card-footer">
-      <span>
-      <i class="fa-solid fa-quote-left"></i> <%= bookmark.comment %>
-      </span>
-      <%= link_to "Delete", bookmark_path(bookmark), data: {turbo_method: "delete", turbo_confirm: "Are you sure?"} %>
-      </div>
-      </div>
-    </div>
+      <% end %>
+    <% else %>
+      <h4>You have no movies in this list yet, add some below!</h4>
     <% end %>
+
   </div>
 <div class="row mb-3">
 <h2>Add a movie</h2>
